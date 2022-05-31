@@ -1,16 +1,16 @@
 const tasks = [
   {
-    description: 'initialize repo',
+    description: 'Initialize repo',
     completed: false,
     index: 0,
   },
   {
-    description: 'set up webpack',
+    description: 'Set up webpack',
     completed: false,
     index: 1,
   },
   {
-    description: 'structure todo list',
+    description: 'Structure todo list',
     completed: false,
     index: 2,
   },
