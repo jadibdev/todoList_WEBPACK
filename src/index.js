@@ -1,14 +1,41 @@
 import _ from 'lodash';
 import './style.css'
 
-function component() {
-  const element = document.createElement('div');
+const tasks = [
+  {
+    description: 'initialize repo',
+    completed: false,
+    index: 0
+  },
+  {
+    description: 'set up webpack',
+    completed: false,
+    index: 0
+  },
+  {
+    description: 'structure todo list',
+    completed: false,
+    index: 0
+  }
+]
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Webpack', 'is setup and ready to go :-)'], ' ');
-  element.classList.add('hello');
-
-  return element;
+const getTasks = () => {
+  const ulContainer = document.createElement('div')
+  let tasksUl = document.createElement('ul')
+  let tasksTemplate = '';
+  for (let i = 0; i < tasks.length; i++) {
+    tasksTemplate += `
+                <li>${tasks[i].description}</li>
+            `
+  }
+  tasksUl.innerHTML = tasksTemplate
+  ulContainer.append(tasksUl);
+  return ulContainer;
 }
 
-document.body.appendChild(component());
+const app = () => {
+  const main = document.getElementById('main')
+  main.append(getTasks())
+}
+
+document.body.appendChild(app());
