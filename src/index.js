@@ -7,3 +7,13 @@ const app = () => {
 };
 
 app();
+
+let inputEl = document.getElementById('task');
+let taskObject = {};
+inputEl.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    console.log(event.target.value);
+    taskObject['Description'] = event.target.value;
+    event.preventDefault();
+  }
+});
