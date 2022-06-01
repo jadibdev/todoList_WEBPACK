@@ -1,14 +1,9 @@
-import _ from 'lodash';
-import './style.css'
+import './style.css';
+import listContainer from './modules/listContainer.js';
 
-function component() {
-  const element = document.createElement('div');
+const app = () => {
+  const main = document.getElementById('main');
+  main.append(listContainer());
+};
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Webpack', 'is setup and ready to go :-)'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
+app();
