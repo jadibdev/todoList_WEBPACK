@@ -43,8 +43,18 @@
   border-bottom: 1px solid lightgray;
 }
 
+.liDiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .list-footer {
   text-align: center;
   background: #f6f6f6;
   color: gray;
+}
+
+.disappear {
+  display: none;
 }
