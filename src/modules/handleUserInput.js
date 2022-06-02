@@ -1,44 +1,60 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import tasks from './tasksData.js';
 
-const localStorageTasks = JSON.parse(localStorage.getItem('tasks'));
-console.log('from local storage', localStorageTasks);
+// let localStorageTasks = JSON.parse(localStorage.getItem('tasks'));
 
-const ulContainer = document.createElement('div');
-ulContainer.classList.add('ul-container');
-const tasksUl = document.createElement('ul');
-tasksUl.id = 'magic';
-ulContainer.append(tasksUl);
+const handleUserInput = () => {
+  const inputEl = document.getElementById('task');
+  const taskObject = {
+    description: '',
+    completed: false,
+    index: tasks.length,
+  };
+  inputEl.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      const taskObject = {
+        description: event.target.value,
+        completed: false,
+        index: tasks.length,
+      };
+      // taskObject.index = tasks.length;
+      tasks.push(taskObject);
+      console.log('item pushed', tasks);
 
-const getTasks = () => {
-  if (localStorageTasks) {
-    for (let i = 0; i < localStorageTasks.length; i += 1) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
       const li = document.createElement('li');
-      li.id = `li${localStorageTasks[i].index}`;
-      tasksUl.append(li);
+      li.id = `li${taskObject.index}`;
 
       const div = document.createElement('div');
       div.classList.add('liDiv');
-      li.append(div);
 
       const input = document.createElement('input');
       input.type = 'checkbox';
-      div.append(input);
 
       const p = document.createElement('p');
-      p.textContent = localStorageTasks[i].description;
-      div.append(p);
+      p.textContent = taskObject.description;
 
       const ellipsis = document.createElement('i');
-      ellipsis.id = `ellipsis${localStorageTasks[i].index}`;
+      ellipsis.id = `ellipsis${taskObject.index}`;
       const ellipsisClasses = ['fa-solid', 'fa-ellipsis-vertical'];
       ellipsis.classList.add(...ellipsisClasses);
-      li.append(ellipsis);
 
       const trash = document.createElement('i');
-      trash.id = `trash${localStorageTasks[i].index}`;
+      trash.id = `trash${taskObject.index}`;
       const trashClasses = ['fa-solid', 'fa-trash-can', 'disappear'];
       trash.classList.add(...trashClasses);
+
+      div.append(input);
+      div.append(p);
+      li.append(div);
+
+      li.append(ellipsis);
       li.append(trash);
+
+      document.querySelector('ul').append(li);
+      event.target.value = '';
 
       ellipsis.addEventListener('click', () => {
         li.contentEditable = true;
@@ -56,20 +72,20 @@ const getTasks = () => {
         }
       });
 
-      // eslint-disable-next-line no-loop-func
       trash.addEventListener('click', () => {
         li.remove();
-        tasks.splice(tasks[localStorageTasks.index].index, 1);
-        console.log(tasks);
+        tasks.splice(taskObject.index, 1);
+        console.log(taskObject);
 
-        /* for (let i = 0; i < tasks.length; i += 1) {
+        for (let i = 0; i < tasks.length; i += 1) {
           tasks[i].index = i;
-        } */
+        }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
+
+      event.preventDefault();
     }
-  }
-  return ulContainer;
+  });
 };
 
-export default getTasks;
+export default handleUserInput;

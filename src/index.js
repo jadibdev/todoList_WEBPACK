@@ -1,5 +1,7 @@
 import './style.css';
 import listContainer from './modules/listContainer.js';
+import handleUserInput from './modules/handleUserInput.js';
+// import tasks from './modules/tasksData.js';
 
 const app = () => {
   const main = document.getElementById('main');
@@ -7,13 +9,4 @@ const app = () => {
 };
 
 app();
-
-let inputEl = document.getElementById('task');
-let taskObject = {};
-inputEl.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    console.log(event.target.value);
-    taskObject['Description'] = event.target.value;
-    event.preventDefault();
-  }
-});
+handleUserInput();
