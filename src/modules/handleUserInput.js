@@ -2,8 +2,6 @@
 /* eslint-disable max-len */
 import tasks from './tasksData.js';
 
-// let localStorageTasks = JSON.parse(localStorage.getItem('tasks'));
-
 const handleUserInput = () => {
   const inputEl = document.getElementById('task');
   inputEl.addEventListener('keypress', (event) => {
@@ -15,9 +13,10 @@ const handleUserInput = () => {
       };
       // taskObject.index = tasks.length;
       tasks.push(taskObject);
-      console.log('item pushed', tasks);
+      const oldItems = JSON.parse(localStorage.getItem('tasks')) || [];
+      oldItems.push(taskObject);
 
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      localStorage.setItem('tasks', JSON.stringify(oldItems));
 
       const li = document.createElement('li');
       li.id = `li${taskObject.index}`;
@@ -70,8 +69,6 @@ const handleUserInput = () => {
       trash.addEventListener('click', () => {
         li.remove();
         tasks.splice(taskObject.index, 1);
-        console.log(taskObject);
-
         for (let i = 0; i < tasks.length; i += 1) {
           tasks[i].index = i;
         }
