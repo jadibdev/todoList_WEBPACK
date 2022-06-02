@@ -6,11 +6,6 @@ import tasks from './tasksData.js';
 
 const handleUserInput = () => {
   const inputEl = document.getElementById('task');
-  const taskObject = {
-    description: '',
-    completed: false,
-    index: tasks.length,
-  };
   inputEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
       const taskObject = {
