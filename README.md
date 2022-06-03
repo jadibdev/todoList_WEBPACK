@@ -1,3 +1,7 @@
+## To Do List
+
+This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task.
+
 ## Built With
 
 - HTML

@@ -50,11 +50,22 @@ const checkLocal = () => {
       });
 
       trash.addEventListener('click', () => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+        // localStorage.setItem('tasks', JSON.stringify(tasks));
         li.remove();
         tasks.splice(tasks[i].index, 1);
         for (let i = 0; i < tasks.length; i += 1) {
           tasks[i].index = i;
+        }
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      });
+
+      input.addEventListener('click', () => {
+        p.classList.toggle('lineThrough');
+        li.classList.toggle('completed');
+        if (tasks[tasks[i].index].completed === false) {
+          tasks[tasks[i].index].completed = true;
+        } else {
+          tasks[tasks[i].index].completed = false;
         }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });

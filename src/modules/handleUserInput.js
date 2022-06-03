@@ -11,9 +11,6 @@ const handleUserInput = () => {
         completed: false,
         index: tasks.length,
       };
-      console.log('tasks data before push:', tasks);
-      console.log('localstorage data before push', JSON.parse(localStorage.getItem('tasks')));
-
       // localStorage.setItem('tasks', JSON.stringify(tasks));
       tasks.push(taskObject);
       localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -72,6 +69,17 @@ const handleUserInput = () => {
         tasks.splice(taskObject.index, 1);
         for (let i = 0; i < tasks.length; i += 1) {
           tasks[i].index = i;
+        }
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      });
+
+      input.addEventListener('click', () => {
+        p.classList.toggle('lineThrough');
+        li.classList.toggle('completed');
+        if (tasks[taskObject.index].completed === false) {
+          tasks[taskObject.index].completed = true;
+        } else {
+          tasks[taskObject.index].completed = false;
         }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
