@@ -11,9 +11,6 @@ const handleUserInput = () => {
         completed: false,
         index: tasks.length,
       };
-      console.log('tasks data before push:', tasks);
-      console.log('localstorage data before push', JSON.parse(localStorage.getItem('tasks')));
-
       // localStorage.setItem('tasks', JSON.stringify(tasks));
       tasks.push(taskObject);
       localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -77,8 +74,10 @@ const handleUserInput = () => {
       });
 
       input.addEventListener('click', () => {
-        console.log('completed!');
         p.classList.toggle('lineThrough');
+        li.classList.toggle('completed');
+        tasks[taskObject.index].completed = true;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       });
 
       event.preventDefault();

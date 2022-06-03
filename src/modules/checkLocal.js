@@ -50,7 +50,7 @@ const checkLocal = () => {
       });
 
       trash.addEventListener('click', () => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+        // localStorage.setItem('tasks', JSON.stringify(tasks));
         li.remove();
         tasks.splice(tasks[i].index, 1);
         for (let i = 0; i < tasks.length; i += 1) {
@@ -60,8 +60,10 @@ const checkLocal = () => {
       });
 
       input.addEventListener('click', () => {
-        console.log('completed!');
         p.classList.toggle('lineThrough');
+        li.classList.toggle('completed');
+        tasks[tasks[i].index].completed = true;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       });
     }
   }

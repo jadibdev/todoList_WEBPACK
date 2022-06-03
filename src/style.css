@@ -53,6 +53,7 @@
   text-align: center;
   background: #f6f6f6;
   color: gray;
+  height: 50px;
 }
 
 .disappear {
@@ -61,4 +62,9 @@
 
 .lineThrough {
   text-decoration: line-through;
+}
+
+#clearButton {
+  height: 50px;
+  width: 300px;
 }
