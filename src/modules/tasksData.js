@@ -1,3 +1,3 @@
-let tasks = (JSON.parse(localStorage.getItem('tasks')) || []);
+const tasks = (JSON.parse(localStorage.getItem('tasks')) || []);
 
 export default tasks;
