@@ -62,7 +62,11 @@ const checkLocal = () => {
       input.addEventListener('click', () => {
         p.classList.toggle('lineThrough');
         li.classList.toggle('completed');
-        tasks[tasks[i].index].completed = true;
+        if (tasks[tasks[i].index].completed === false) {
+          tasks[tasks[i].index].completed = true;
+        } else {
+          tasks[tasks[i].index].completed = false;
+        }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
     }

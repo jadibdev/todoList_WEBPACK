@@ -76,7 +76,11 @@ const handleUserInput = () => {
       input.addEventListener('click', () => {
         p.classList.toggle('lineThrough');
         li.classList.toggle('completed');
-        tasks[taskObject.index].completed = true;
+        if (tasks[taskObject.index].completed === false) {
+          tasks[taskObject.index].completed = true;
+        } else {
+          tasks[taskObject.index].completed = false;
+        }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
 
