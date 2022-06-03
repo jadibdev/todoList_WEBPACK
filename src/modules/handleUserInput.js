@@ -11,12 +11,15 @@ const handleUserInput = () => {
         completed: false,
         index: tasks.length,
       };
-      // taskObject.index = tasks.length;
-      tasks.push(taskObject);
-      const oldItems = JSON.parse(localStorage.getItem('tasks')) || [];
-      oldItems.push(taskObject);
+      console.log('tasks data before push:', tasks);
+      console.log('localstorage data before push', JSON.parse(localStorage.getItem('tasks')));
 
-      localStorage.setItem('tasks', JSON.stringify(oldItems));
+      // localStorage.setItem('tasks', JSON.stringify(tasks));
+      tasks.push(taskObject);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      console.log('tasks data after push:', tasks);
+      console.log('localstorage after push', JSON.parse(localStorage.getItem('tasks')));
 
       const li = document.createElement('li');
       li.id = `li${taskObject.index}`;
@@ -67,11 +70,16 @@ const handleUserInput = () => {
       });
 
       trash.addEventListener('click', () => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        console.log('tasks data before deletion:', tasks);
+        console.log('localstorage data deletion', JSON.parse(localStorage.getItem('tasks')));
         li.remove();
         tasks.splice(taskObject.index, 1);
         for (let i = 0; i < tasks.length; i += 1) {
           tasks[i].index = i;
         }
+        console.log('tasks data before deletion:', tasks);
+        console.log('localstorage data before deletion', JSON.parse(localStorage.getItem('tasks')));
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
 
