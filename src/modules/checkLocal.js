@@ -1,6 +1,8 @@
 /* eslint-disable no-loop-func */
+import tasks from './tasksData.js';
+
 const checkLocal = () => {
-  let localStorageTasks = JSON.parse(localStorage.getItem('tasks'));
+  const localStorageTasks = JSON.parse(localStorage.getItem('tasks'));
   if (localStorageTasks) {
     for (let i = 0; i < localStorageTasks.length; i += 1) {
       const li = document.createElement('li');
@@ -48,9 +50,13 @@ const checkLocal = () => {
       });
 
       trash.addEventListener('click', () => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
         li.remove();
-        localStorageTasks = localStorageTasks.filter((element) => element !== localStorageTasks[i]);
-        localStorage.setItem('tasks', JSON.stringify(localStorageTasks));
+        tasks.splice(tasks[i].index, 1);
+        for (let i = 0; i < tasks.length; i += 1) {
+          tasks[i].index = i;
+        }
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       });
     }
   }
