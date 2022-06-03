@@ -58,3 +58,7 @@
 .disappear {
   display: none;
 }
+
+.lineThrough {
+  text-decoration: line-through;
+}

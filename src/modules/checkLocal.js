@@ -58,6 +58,11 @@ const checkLocal = () => {
         }
         localStorage.setItem('tasks', JSON.stringify(tasks));
       });
+
+      input.addEventListener('click', () => {
+        console.log('completed!');
+        p.classList.toggle('lineThrough');
+      });
     }
   }
 };
