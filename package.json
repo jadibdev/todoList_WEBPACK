@@ -6,20 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "deploy": "gh-pages -d build",
-    "build": "webpack"
+    "build": "webpack",
+    "homepage": "https://jadibdev.github.io/todoList_WEBPACK/src/index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jadibdev/webpack-boilerplate.git"
+    "url": "git+https://github.com/jadibdev/todoList_WEBPACK"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jadibdev/webpack-boilerplate/issues"
+    "url": "https://github.com/jadibdev/todoList_WEBPACK/issues"
   },
-  "homepage": "https://github.com/jadibdev/webpack-boilerplate#readme",
+  "homepage": "https://jadibdev.github.io/todoList_WEBPACK/src/index.html",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
