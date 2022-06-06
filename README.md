@@ -2,6 +2,10 @@
 
 This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task.
 
+### Live Link
+
+[To Do List](https://jadibdev.github.io/todoList_WEBPACK/)
+
 ## Built With
 
 - HTML
