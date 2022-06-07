@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
-import tasks from './tasksData.js';
+const tasks = (JSON.parse(localStorage.getItem('tasks')) || []);
 
 const addDelete = (event) => {
   if (event.key === 'Enter') {
@@ -86,9 +84,6 @@ const addDelete = (event) => {
   }
 };
 
-const handleUserInput = () => {
-  const inputEl = document.getElementById('task');
-  inputEl.addEventListener('keypress', addDelete);
-};
-
-export default handleUserInput;
+test('testing', () => {
+  console.log('is this working', JSON.parse(localStorage.getItem('tasks')));
+});
