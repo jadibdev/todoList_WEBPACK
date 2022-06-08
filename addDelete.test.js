@@ -689,7 +689,7 @@ describe('Adds and removes only 1 li element', () => {
   });
 });
 
-describe('Testing content editing and updating', () => {
+describe('Testing content editing and updating a task', () => {
   test('edit functionality works!', () => {
     /*
       ARRANGE
