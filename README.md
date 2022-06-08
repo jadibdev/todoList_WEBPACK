@@ -32,6 +32,13 @@ Run the index.html file in your favorite browser
 - Twitter: [@MohamedJadib](https://twitter.com/MohamedJadib)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-jadib-942a5041/)
 
+👤 **Bruk Teshome**
+
+- GitHub: [@githubhandle](https://github.com/bruk19)
+- Twitter: [@twitterhandle](https://twitter.com/Bruktesh)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bruk-teshome-ab4325226)
+
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
@@ -45,4 +52,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
-//
