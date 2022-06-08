@@ -3,6 +3,7 @@
 import tasks from './tasksData.js';
 
 const addDelete = (event) => {
+  console.log(event);
   if (event.key === 'Enter') {
     const taskObject = {
       description: event.target.value,
