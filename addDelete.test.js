@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import tasks from './src/modules/tasksData.js';
 
 describe('Testing add functionality', () => {
@@ -110,7 +111,6 @@ describe('Testing add functionality', () => {
   */
     expect(tasks[0]).toStrictEqual({ description: 'Code', completed: false, index: 0 });
   });
-
 
   test('Adds new task successully to local storage', () => {
   /*
@@ -565,7 +565,7 @@ describe('Adds and removes only 1 li element', () => {
   */
     add(event);
     let liFinal = '';
-    liFinal += `<li id="li2"><div class="liDiv"><input type="checkbox"><p>Code</p></div><i id="ellipsis2" class="fa-solid fa-ellipsis-vertical"></i><i id="trash2" class="fa-solid fa-trash-can disappear"></i></li>`
+    liFinal += '<li id="li2"><div class="liDiv"><input type="checkbox"><p>Code</p></div><i id="ellipsis2" class="fa-solid fa-ellipsis-vertical"></i><i id="trash2" class="fa-solid fa-trash-can disappear"></i></li>';
 
     /*
     ASSERT
@@ -653,13 +653,13 @@ describe('Adds and removes only 1 li element', () => {
 
         const remove = (obj) => {
           // localStorage.setItem('tasks', JSON.stringify(tasks));
-            li.remove();
-            tasks.splice(obj.index, 1);
-            for (let i = 0; i < tasks.length; i += 1) {
-              tasks[i].index = i;
-            }
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-    };
+          li.remove();
+          tasks.splice(obj.index, 1);
+          for (let i = 0; i < tasks.length; i += 1) {
+            tasks[i].index = i;
+          }
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+        };
 
         trash.addEventListener('click', remove(taskObject));
 
@@ -673,11 +673,11 @@ describe('Adds and removes only 1 li element', () => {
           }
           localStorage.setItem('tasks', JSON.stringify(tasks));
         });
-      /*
+        /*
     ACT
     -------
   */
-    remove(tasks[0]);
+        remove(tasks[0]);
       }
     };
 
