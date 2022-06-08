@@ -2,6 +2,7 @@
   "name": "webpack-boilerplate",
   "jest": {
     "resetMocks": false,
+    "testEnvironment": "jsdom",
     "setupFiles": [
       "jest-localstorage-mock"
     ]

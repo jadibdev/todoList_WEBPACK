@@ -2,8 +2,7 @@
 /* eslint-disable max-len */
 import tasks from './tasksData.js';
 
-const addDelete = (event) => {
-  console.log(event);
+const add = (event) => {
   if (event.key === 'Enter') {
     const taskObject = {
       description: event.target.value,
@@ -46,6 +45,16 @@ const addDelete = (event) => {
     document.querySelector('ul').append(li);
     event.target.value = '';
 
+    const remove = (obj) => {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      li.remove();
+      tasks.splice(obj.index, 1);
+      for (let i = 0; i < tasks.length; i += 1) {
+        tasks[i].index = i;
+      }
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    };
+
     ellipsis.addEventListener('click', () => {
       li.contentEditable = true;
       li.style.backgroundColor = 'yellow';
@@ -62,15 +71,7 @@ const addDelete = (event) => {
       }
     });
 
-    trash.addEventListener('click', () => {
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      li.remove();
-      tasks.splice(taskObject.index, 1);
-      for (let i = 0; i < tasks.length; i += 1) {
-        tasks[i].index = i;
-      }
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    });
+    trash.addEventListener('click', remove(taskObject));
 
     input.addEventListener('click', () => {
       p.classList.toggle('lineThrough');
@@ -89,7 +90,7 @@ const addDelete = (event) => {
 
 const handleUserInput = () => {
   const inputEl = document.getElementById('task');
-  inputEl.addEventListener('keypress', addDelete);
+  inputEl.addEventListener('keypress', add);
 };
 
 export default handleUserInput;
