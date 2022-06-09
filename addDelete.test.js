@@ -106,7 +106,7 @@ describe('Testing add functionality', () => {
     add(event);
 
     /*
-    ASSERT
+    ASSERTasas
     -------
   */
     expect(tasks[0]).toStrictEqual({ description: 'Code', completed: false, index: 0 });
