@@ -1010,7 +1010,7 @@ describe('Testing content editing and updating a task', () => {
       clearButton.textContent = 'Clear All Completed';
       listFooter.classList.add('list-footer');
       listFooter.append(clearButton);
-      
+
       const clearAll = () => {
         // let completedItemsTotal = 0;
         const completed = document.querySelectorAll('.completed');
