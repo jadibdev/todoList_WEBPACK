@@ -1,6 +1,6 @@
 ## To Do List
 
-This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task.
+This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task. This app takes advantage of the power of webpack to bundle files, reduce their size and send them into production.
 
 ### Live Link
 
