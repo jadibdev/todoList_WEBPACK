@@ -9,7 +9,8 @@ This project is a todo list web app that will allow the user to add and delete t
 ## Built With
 
 - Webpack
-- JAVASCRIPT
+- Javascript
+- Jest
 - Babel
 
 ## Getting Started
