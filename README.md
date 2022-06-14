@@ -10,6 +10,7 @@ This project is a todo list web app that will allow the user to add and delete t
 
 - Webpack
 - JAVASCRIPT
+- Babel
 
 ## Getting Started
 
