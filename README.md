@@ -8,8 +8,7 @@ This project is a todo list web app that will allow the user to add and delete t
 
 ## Built With
 
-- HTML
-- CSS
+- Webpack
 - JAVASCRIPT
 
 ## Getting Started
