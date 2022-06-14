@@ -1,6 +1,6 @@
 ## To Do List
 
-This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task. This app takes advantage of the power of webpack to bundle files, reduce their size and send them into production. The app is built with Javacsript, Webpack and uses the Jest library for testing.
+This project is a todo list web app that will allow the user to add and delete todo items as well as mark them as complete when done with a task. This app takes advantage of the power of webpack to bundle files, reduce their size and send them into production. The app is built with Javascript, Webpack, Babel and uses the Jest library for testing.
 
 ### Live Link
 
